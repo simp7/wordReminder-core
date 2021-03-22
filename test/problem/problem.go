@@ -1,13 +1,13 @@
 package problem
 
 import (
-	"wordReminder-core/test"
-	"wordReminder-core/voca"
+	"github.com/simp7/wordReminder-core/test"
+	"github.com/simp7/wordReminder-core/voca"
 )
 
 type problem struct {
-	word voca.Word
-	input test.Input
+	word       voca.Word
+	input      test.Input
 	answerType test.AnswerType
 }
 

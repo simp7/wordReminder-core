@@ -1,17 +1,17 @@
 package uid
 
 import (
+	"github.com/simp7/wordReminder-core/user"
 	"sync"
-	"wordReminder-core/user"
 )
 
 var instance *creator
 var once sync.Once
 
 type creator struct {
-	current user.UID
+	current  user.UID
 	dataChan chan user.UID
-	lock sync.Mutex
+	lock     sync.Mutex
 }
 
 func New(last user.UID) user.UID {
@@ -22,7 +22,7 @@ func New(last user.UID) user.UID {
 
 	instance.increment()
 
-	return <- instance.dataChan
+	return <-instance.dataChan
 
 }
 
@@ -35,6 +35,6 @@ func initInstance(last user.UID) {
 func (c *creator) increment() {
 	instance.lock.Lock()
 	instance.dataChan <- instance.current
-	instance.current ++
+	instance.current++
 	instance.lock.Unlock()
 }

@@ -1,13 +1,13 @@
 package problems
 
-import "wordReminder-core/test"
+import "github.com/simp7/wordReminder-core/test"
 
 type array struct {
 	data []test.Problem
 	idx  int
 }
 
-func Array(pr... test.Problem) test.Problems {
+func Array(pr ...test.Problem) test.Problems {
 	p := new(array)
 	p.idx = 0
 	p.data = pr
@@ -19,5 +19,5 @@ func (a *array) Current() test.Problem {
 }
 
 func (a *array) Next() {
-	a.idx ++
+	a.idx++
 }

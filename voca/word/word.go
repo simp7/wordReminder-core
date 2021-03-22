@@ -1,8 +1,8 @@
 package word
 
 import (
-	"wordReminder-core/voca"
-	"wordReminder-core/voca/meanings"
+	"github.com/simp7/wordReminder-core/voca"
+	"github.com/simp7/wordReminder-core/voca/meanings"
 )
 
 func New(spelling string, mean ...voca.Meaning) voca.Word {

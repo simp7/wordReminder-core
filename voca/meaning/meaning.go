@@ -1,7 +1,7 @@
 package meaning
 
 import (
-	"wordReminder-core/voca"
+	"github.com/simp7/wordReminder-core/voca"
 )
 
 func New(class voca.Class, mean string) voca.Meaning {

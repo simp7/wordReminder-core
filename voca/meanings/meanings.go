@@ -1,9 +1,9 @@
 package meanings
 
 import (
-	"wordReminder-core/voca"
+	"github.com/simp7/wordReminder-core/voca"
 )
 
-func New(mean...voca.Meaning) voca.Meanings {
+func New(mean ...voca.Meaning) voca.Meanings {
 	return voca.Meanings{Data: mean}
 }

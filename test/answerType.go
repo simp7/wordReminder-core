@@ -1,6 +1,6 @@
 package test
 
-import "wordReminder-core/voca"
+import "github.com/simp7/wordReminder-core/voca"
 
 type AnswerType interface {
 	GetQuestion(voca.Word) string

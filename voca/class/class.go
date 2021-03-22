@@ -1,6 +1,6 @@
 package class
 
-import "wordReminder-core/voca"
+import "github.com/simp7/wordReminder-core/voca"
 
 const (
 	Noun voca.Class = iota

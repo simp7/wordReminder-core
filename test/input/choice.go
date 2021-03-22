@@ -1,8 +1,8 @@
 package input
 
 import (
-	"wordReminder-core/test"
-	"wordReminder-core/voca"
+	"github.com/simp7/wordReminder-core/test"
+	"github.com/simp7/wordReminder-core/voca"
 )
 
 type choice struct {

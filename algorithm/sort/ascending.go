@@ -1,8 +1,8 @@
 package sort
 
 import (
+	"github.com/simp7/wordReminder-core/voca"
 	"sort"
-	"wordReminder-core/voca"
 )
 
 func Ascending(set voca.WordSet) {
