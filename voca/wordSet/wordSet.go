@@ -23,7 +23,7 @@ func (s *set) Get(idx int) voca.Word {
 }
 
 func (s *set) Less(i, j int) bool {
-	return s.Words[i].Spelling < s.Words[j].Spelling
+	return s.Words[i].Spell.Data < s.Words[j].Spell.Data
 }
 
 func (s *set) Swap(i, j int) {

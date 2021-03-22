@@ -1,6 +1,6 @@
 package voca
 
 type Word struct {
-	Spelling string
-	Mean     Meanings
+	Spell Spelling
+	Mean  Meanings
 }

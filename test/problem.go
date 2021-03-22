@@ -1,8 +1,8 @@
 package test
 
+import "github.com/simp7/wordReminder-core/voca"
+
 type Problem interface {
-	Question() string
-	IsCorrect(userAnswer string) bool
+	Question() voca.Unit
+	IsCorrect(userAnswer voca.Unit) bool
 }
-
-
