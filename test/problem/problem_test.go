@@ -6,9 +6,7 @@ import (
 	"github.com/simp7/wordReminder-core/test/problemType"
 	"github.com/simp7/wordReminder-core/voca"
 	"github.com/simp7/wordReminder-core/voca/class"
-	"github.com/simp7/wordReminder-core/voca/meaning"
-	"github.com/simp7/wordReminder-core/voca/meanings"
-	"github.com/simp7/wordReminder-core/voca/spelling"
+	"github.com/simp7/wordReminder-core/voca/unit/meaning"
 	"github.com/simp7/wordReminder-core/voca/word"
 	"testing"
 )
@@ -23,26 +21,12 @@ func TestProblem_IsCorrect(t *testing.T) {
 		t.Errorf("Length of slice is different")
 		return
 	}
-
-	for i, v := range problems {
-		Evaluate(t, i, v.IsCorrect(ans[i]), mark)
-	}
-
 }
 
 func TestProblem_Question(t *testing.T) {
 
 	problems := GetProblems()
-	ans := []voca.Unit{spelling.New("apple"),
-		meaning.New(class.Noun, "사과"),
-		spelling.New("test"),
-		spelling.New("exam"),
-		meaning.New(class.Noun, "얼룩말"),
-		meaning.New(class.Noun, "Go 언어"),
-		meaning.New(class.Verb, "가다"),
-		meanings.New(meaning.New(class.Verb, "오다"), meaning.New(class.Noun, "Go 언어")), // Should return error
-		spelling.New("go"),
-	}
+	ans := []string{"apple", "사과", "test", "exam", "얼룩말", "가다, Go 언어", "가다, Go 언어", "가다, Go 언어", "go"}
 
 	if len(problems) != len(ans) {
 		t.Errorf("Length of slice is different")
@@ -50,18 +34,14 @@ func TestProblem_Question(t *testing.T) {
 	}
 
 	for i, v := range problems {
-		if !(v.Question() == ans[i]) {
-			t.Errorf("Errors in %d : wanted %+v, but got %+v", i, v.Question(), ans[i])
-		} else {
-			t.Logf("Test %d has been passed!", i)
-		}
+		Evaluate(t, i, v.Question().Format(), ans[i])
 	}
 
 }
 
-func Evaluate(t *testing.T, idx int, a interface{}, b interface{}) {
+func Evaluate(t *testing.T, idx int, a string, b string) {
 	if a != b {
-		t.Errorf("Errors in %d : wanted %+v, but got %+v", idx, a, b)
+		t.Errorf("Errors in %d : wanted %s, but got %s", idx, a, b)
 	} else {
 		t.Logf("Test %d has been passed!", idx)
 	}

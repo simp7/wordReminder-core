@@ -14,9 +14,9 @@ func Meaning() test.Type {
 }
 
 func (m meaning) GetQuestion(word voca.Word) voca.Unit {
-	return word.Spell
+	return word.Spell()
 }
 
 func (m meaning) GetAnswer(word voca.Word) voca.Unit {
-	return word.Mean
+	return word.Mean()
 }

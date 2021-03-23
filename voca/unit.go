@@ -5,4 +5,5 @@ package voca
 
 type Unit interface {
 	IsEqual(Unit) bool
+	Format() string
 }

@@ -14,9 +14,9 @@ func Spelling() test.Type {
 }
 
 func (s spelling) GetQuestion(word voca.Word) voca.Unit {
-	return word.Mean
+	return word.Mean()
 }
 
 func (s spelling) GetAnswer(word voca.Word) voca.Unit {
-	return word.Spell
+	return word.Spell()
 }
