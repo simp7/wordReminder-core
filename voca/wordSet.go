@@ -1,8 +1,8 @@
 package voca
 
+import "sort"
+
 type WordSet interface {
-	Len() int
+	sort.Interface
 	Get(idx int) Word
-	Less(int, int) bool
-	Swap(int, int)
 }

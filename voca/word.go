@@ -1,6 +1,6 @@
 package voca
 
-type Word struct {
-	Spelling string
-	Mean     Meanings
+type Word interface {
+	Spell() Unit
+	Mean() Unit
 }

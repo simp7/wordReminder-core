@@ -8,10 +8,10 @@ import (
 type problem struct {
 	word       voca.Word
 	input      test.Input
-	answerType test.AnswerType
+	answerType test.Type
 }
 
-func New(word voca.Word, input test.Input, answerType test.AnswerType) test.Problem {
+func New(word voca.Word, input test.Input, answerType test.Type) test.Problem {
 	p := new(problem)
 	p.word = word
 	p.input = input
@@ -19,10 +19,11 @@ func New(word voca.Word, input test.Input, answerType test.AnswerType) test.Prob
 	return p
 }
 
-func (p *problem) Question() string {
+func (p *problem) Question() voca.Unit {
 	return p.answerType.GetQuestion(p.word)
 }
 
 func (p *problem) IsCorrect(userAnswer string) bool {
-	return p.answerType.GetAnswer(p.word) == userAnswer
+	correct := p.answerType.GetAnswer(p.word)
+	return correct.IsRight(userAnswer)
 }

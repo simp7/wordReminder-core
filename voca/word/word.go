@@ -2,9 +2,24 @@ package word
 
 import (
 	"github.com/simp7/wordReminder-core/voca"
-	"github.com/simp7/wordReminder-core/voca/meanings"
+	"github.com/simp7/wordReminder-core/voca/unit"
+	"github.com/simp7/wordReminder-core/voca/unit/meanings"
+	"github.com/simp7/wordReminder-core/voca/unit/spelling"
 )
 
-func New(spelling string, mean ...voca.Meaning) voca.Word {
-	return voca.Word{Spelling: spelling, Mean: meanings.New(mean...)}
+type word struct {
+	Spelling unit.Spelling
+	Meaning  unit.Meanings
+}
+
+func New(spell string, mean ...unit.Meaning) voca.Word {
+	return word{Spelling: spelling.New(spell), Meaning: meanings.New(mean...)}
+}
+
+func (w word) Mean() voca.Unit {
+	return w.Meaning
+}
+
+func (w word) Spell() voca.Unit {
+	return w.Spelling
 }
