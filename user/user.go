@@ -1,6 +1,6 @@
 package user
 
 type User struct {
-	name Name
-	uid UID
+	name   Name
+	streak Streak
 }

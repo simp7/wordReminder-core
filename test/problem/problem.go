@@ -23,7 +23,7 @@ func (p *problem) Question() voca.Unit {
 	return p.answerType.GetQuestion(p.word)
 }
 
-func (p *problem) IsCorrect(userAnswer voca.Unit) bool {
+func (p *problem) IsCorrect(userAnswer string) bool {
 	correct := p.answerType.GetAnswer(p.word)
-	return userAnswer.IsEqual(correct)
+	return correct.IsRight(userAnswer)
 }

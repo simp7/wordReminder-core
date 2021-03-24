@@ -4,6 +4,6 @@ package voca
 //Unit includes Meaning, Meanings, Spelling
 
 type Unit interface {
-	IsEqual(Unit) bool
+	IsRight(string) bool
 	Format() string
 }

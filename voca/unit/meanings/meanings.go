@@ -1,24 +1,23 @@
 package meanings
 
 import (
-	"github.com/simp7/wordReminder-core/voca"
 	"github.com/simp7/wordReminder-core/voca/unit"
 )
 
 type meanings struct {
-	Data []unit.Meaning
+	Elements []unit.Meaning
 }
 
 func New(mean ...unit.Meaning) unit.Meanings {
-	return meanings{Data: mean}
+	return meanings{Elements: mean}
 }
 
-func (m meanings) IsEqual(u voca.Unit) bool {
+func (m meanings) IsRight(input string) bool {
 
 	ok := false
 
-	for _, v := range m.Data {
-		ok = ok || u.IsEqual(v)
+	for _, v := range m.Elements {
+		ok = ok || v.IsRight(input)
 	}
 
 	return ok
@@ -29,9 +28,9 @@ func (m meanings) Format() string {
 
 	var result string
 
-	for i, v := range m.Data {
+	for i, v := range m.Elements {
 		result += v.Format()
-		if len(m.Data) > i+1 {
+		if len(m.Elements) > i+1 {
 			result += ", "
 		}
 	}
