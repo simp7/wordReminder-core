@@ -1,11 +1,31 @@
 package streak
 
-import "github.com/simp7/wordReminder-core/user"
+import (
+	"errors"
+	"github.com/simp7/wordReminder-core/user"
+	"strconv"
+)
 
-type streak struct {
+type streak int
+
+var (
+	NegativeStreakErr = errors.New("streak should not be negative")
+)
+
+func (s *streak) Increment() {
+	*s += 1
 }
 
-func New() user.Streak {
+func (s *streak) String() string {
+	data := int(*s)
+	return strconv.Itoa(data)
+}
+
+func New(preset int) (user.Streak, error) {
 	s := new(streak)
-	return s
+	if preset < 0 {
+		return nil, NegativeStreakErr
+	}
+	*s = streak(preset)
+	return s, nil
 }
