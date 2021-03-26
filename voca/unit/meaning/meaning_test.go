@@ -7,6 +7,7 @@ import (
 )
 
 func TestMeaning_IsRight(t *testing.T) {
+
 	scenario := []struct {
 		desc    string
 		meaning unit.Meaning
@@ -29,6 +30,7 @@ func TestMeaning_IsRight(t *testing.T) {
 }
 
 func TestMeaning_String(t *testing.T) {
+
 	scenario := []struct {
 		desc    string
 		meaning unit.Meaning
@@ -46,4 +48,5 @@ func TestMeaning_String(t *testing.T) {
 			t.Errorf("error in test \"%s\": wanted %s, but got %s\n", v.desc, v.output, v.meaning)
 		}
 	}
+
 }
