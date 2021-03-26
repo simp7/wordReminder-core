@@ -1,7 +1,6 @@
 package meaning
 
 import (
-	"github.com/simp7/wordReminder-core/voca/class"
 	"github.com/simp7/wordReminder-core/voca/unit"
 	"testing"
 )
@@ -14,9 +13,9 @@ func TestMeaning_IsRight(t *testing.T) {
 		ans     string
 		output  bool
 	}{
-		{"apple", New(class.Noun, "사과"), "사과", true},
-		{"go", New(class.Verb, "가다"), "가다", true},
-		{"trial and error", New(class.Idiom, "시행착오"), "실패", false},
+		{"apple", Noun("사과"), "사과", true},
+		{"go", Verb("가다"), "가다", true},
+		{"trial and error", Idiom("시행착오"), "실패", false},
 	}
 
 	for _, v := range scenario {
@@ -36,9 +35,9 @@ func TestMeaning_String(t *testing.T) {
 		meaning unit.Meaning
 		output  string
 	}{
-		{"apple", New(class.Noun, "사과"), "사과"},
-		{"go", New(class.Verb, "가다"), "가다"},
-		{"beautiful", New(class.Adjective, "아름다운"), "아름다운"},
+		{"apple", Noun("사과"), "사과"},
+		{"go", Verb("가다"), "가다"},
+		{"beautiful", Adjective("아름다운"), "아름다운"},
 	}
 
 	for _, v := range scenario {
