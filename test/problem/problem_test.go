@@ -4,7 +4,6 @@ import (
 	"github.com/simp7/wordReminder-core/test"
 	"github.com/simp7/wordReminder-core/test/input"
 	"github.com/simp7/wordReminder-core/test/problemType"
-	"github.com/simp7/wordReminder-core/voca/class"
 	"github.com/simp7/wordReminder-core/voca/unit/meaning"
 	"github.com/simp7/wordReminder-core/voca/word"
 	"testing"
@@ -52,11 +51,11 @@ func Evaluate(t *testing.T, idx int, a interface{}, b interface{}) {
 
 func GetProblems() []test.Problem {
 
-	a := word.New("apple", meaning.New(class.Noun, "사과"))
-	t := word.New("test", meaning.New(class.Verb, "시험하다"), meaning.New(class.Noun, "시험"))
-	e := word.New("exam", meaning.New(class.Noun, "시험"))
-	z := word.New("zebra", meaning.New(class.Noun, "얼룩말"))
-	g := word.New("go", meaning.New(class.Verb, "가다"), meaning.New(class.Noun, "Go 언어"))
+	a := word.New("apple", meaning.Noun("사과"))
+	t := word.New("test", meaning.Verb("시험하다"), meaning.Noun("시험"))
+	e := word.New("exam", meaning.Noun("시험"))
+	z := word.New("zebra", meaning.Noun("얼룩말"))
+	g := word.New("go", meaning.Verb("가다"), meaning.Noun("Go 언어"))
 
 	p1 := New(a, input.Short(), problemType.Meaning())
 	p2 := New(a, input.Short(), problemType.Spelling())
