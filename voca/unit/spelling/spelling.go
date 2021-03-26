@@ -16,6 +16,6 @@ func (s spelling) IsRight(input string) bool {
 	return s.Data == input
 }
 
-func (s spelling) Format() string {
+func (s spelling) String() string {
 	return s.Data
 }

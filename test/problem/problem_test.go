@@ -37,7 +37,7 @@ func TestProblem_Question(t *testing.T) {
 	}
 
 	for i, v := range problems {
-		Evaluate(t, i, v.Question().Format(), ans[i])
+		Evaluate(t, i, v.Question().String(), ans[i])
 	}
 
 }

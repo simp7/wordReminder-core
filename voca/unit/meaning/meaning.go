@@ -18,6 +18,6 @@ func (m meaning) IsRight(input string) bool {
 	return m.Mean == input
 }
 
-func (m meaning) Format() string {
+func (m meaning) String() string {
 	return m.Mean
 }

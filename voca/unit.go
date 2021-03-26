@@ -5,5 +5,5 @@ package voca
 
 type Unit interface {
 	IsRight(string) bool
-	Format() string
+	String() string
 }

@@ -24,12 +24,12 @@ func (m meanings) IsRight(input string) bool {
 
 }
 
-func (m meanings) Format() string {
+func (m meanings) String() string {
 
 	var result string
 
 	for i, v := range m.Elements {
-		result += v.Format()
+		result += v.String()
 		if len(m.Elements) > i+1 {
 			result += ", "
 		}
