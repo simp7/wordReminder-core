@@ -23,7 +23,7 @@ func Adjective(mean string) unit.Meaning {
 	return meaning{Class: class.Adjective, Mean: mean}
 }
 
-func AdVerb(mean string) unit.Meaning {
+func Adverb(mean string) unit.Meaning {
 	return meaning{Class: class.Adverb, Mean: mean}
 }
 
@@ -53,4 +53,8 @@ func (m meaning) IsRight(input string) bool {
 
 func (m meaning) String() string {
 	return m.Mean
+}
+
+func (m meaning) Type() voca.Class {
+	return m.Class
 }
