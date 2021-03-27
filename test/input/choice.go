@@ -10,9 +10,6 @@ type choice struct {
 
 func Choice(choices int) test.Input {
 	c := new(choice)
+	c.choiceAmount = choices
 	return c
-}
-
-func (c *choice) Show() {
-
 }
