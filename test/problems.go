@@ -1,6 +1,6 @@
 package test
 
 type Problems interface {
-	Next()
-	Current() Problem
+	Iterate(func(Problem))
+	Add(Problem)
 }

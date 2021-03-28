@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/simp7/wordReminder-core/voca/unit/meaning"
+	"github.com/simp7/wordReminder-core/voca/meaning"
 	"github.com/simp7/wordReminder-core/voca/word"
 	"github.com/simp7/wordReminder-core/voca/wordSet"
 	"sort"

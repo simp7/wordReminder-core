@@ -1,7 +1,7 @@
 package spelling
 
 import (
-	"github.com/simp7/wordReminder-core/voca/unit"
+	"github.com/simp7/wordReminder-core/voca"
 	"testing"
 )
 
@@ -9,7 +9,7 @@ func TestSpelling_IsRight(t *testing.T) {
 
 	scenario := []struct {
 		desc     string
-		spelling unit.Spelling
+		spelling voca.Spelling
 		ans      string
 		output   bool
 	}{
@@ -33,7 +33,7 @@ func TestSpelling_String(t *testing.T) {
 
 	scenario := []struct {
 		desc     string
-		spelling unit.Spelling
+		spelling voca.Spelling
 		output   string
 	}{
 		{"apple", New("apple"), "apple"},

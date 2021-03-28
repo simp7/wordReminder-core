@@ -1,8 +1,8 @@
 package meanings
 
 import (
-	"github.com/simp7/wordReminder-core/voca/unit"
-	"github.com/simp7/wordReminder-core/voca/unit/meaning"
+	"github.com/simp7/wordReminder-core/voca"
+	"github.com/simp7/wordReminder-core/voca/meaning"
 	"testing"
 )
 
@@ -10,7 +10,7 @@ func TestMeanings_IsRight(t *testing.T) {
 
 	scenario := []struct {
 		desc     string
-		meanings unit.Meanings
+		meanings voca.Meanings
 		ans      string
 		output   bool
 	}{
@@ -35,7 +35,7 @@ func TestMeanings_String(t *testing.T) {
 
 	scenario := []struct {
 		desc     string
-		meanings unit.Meanings
+		meanings voca.Meanings
 		output   string
 	}{
 		{"apple", New(meaning.Noun("사과")), "사과"},
