@@ -6,14 +6,12 @@ import (
 )
 
 type meaningProblem struct {
-	Word  voca.Word
-	Input test.Input
+	Word voca.Word
 }
 
-func Meaning(word voca.Word, input test.Input) test.Problem {
+func Meaning(word voca.Word) test.Problem {
 	p := new(meaningProblem)
 	p.Word = word
-	p.Input = input
 	return p
 }
 

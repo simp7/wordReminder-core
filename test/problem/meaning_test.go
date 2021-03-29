@@ -2,7 +2,6 @@ package problem
 
 import (
 	"github.com/simp7/wordReminder-core/test"
-	"github.com/simp7/wordReminder-core/test/input"
 	"github.com/simp7/wordReminder-core/voca/meaning"
 	"github.com/simp7/wordReminder-core/voca/word"
 	"testing"
@@ -56,15 +55,15 @@ func GetProblems() []test.Problem {
 	z := word.New("zebra", meaning.Noun("얼룩말"))
 	g := word.New("go", meaning.Verb("가다"), meaning.Noun("Go 언어"))
 
-	p1 := Meaning(a, input.Short())
-	p2 := Spelling(a, input.Short())
-	p3 := Meaning(t, input.Short())
-	p4 := Meaning(e, input.Short())
-	p5 := Spelling(z, input.Choice(4))
-	p6 := Spelling(g, input.Short())
-	p7 := Spelling(g, input.Choice(4))
-	p8 := Spelling(g, input.Choice(5))
-	p9 := Meaning(g, input.Choice(4))
+	p1 := Meaning(a)
+	p2 := Spelling(a)
+	p3 := Meaning(t)
+	p4 := Meaning(e)
+	p5 := Spelling(z)
+	p6 := Spelling(g)
+	p7 := Spelling(g)
+	p8 := Spelling(g)
+	p9 := Meaning(g)
 
 	return []test.Problem{p1, p2, p3, p4, p5, p6, p7, p8, p9}
 

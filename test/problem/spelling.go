@@ -6,14 +6,12 @@ import (
 )
 
 type spellingProblem struct {
-	Word  voca.Word
-	Input test.Input
+	Word voca.Word
 }
 
-func Spelling(word voca.Word, input test.Input) test.Problem {
+func Spelling(word voca.Word) test.Problem {
 	s := new(spellingProblem)
 	s.Word = word
-	s.Input = input
 	return s
 }
 
