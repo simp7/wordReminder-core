@@ -9,15 +9,26 @@ type array struct {
 
 func Array(pr ...test.Problem) test.Problems {
 	p := new(array)
-	p.idx = 0
+	p.idx = -1
 	p.data = pr
 	return p
 }
 
-func (a *array) Current() test.Problem {
+func (a *array) current() test.Problem {
 	return a.data[a.idx]
 }
 
-func (a *array) Next() {
+func (a *array) next() bool {
 	a.idx++
+	return len(a.data) > a.idx
+}
+
+func (a *array) Iterate(f func(test.Problem)) {
+	for a.next() {
+		f(a.current())
+	}
+}
+
+func (a *array) Add(problem test.Problem) {
+	a.data = append(a.data, problem)
 }
