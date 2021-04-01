@@ -3,6 +3,7 @@ package meanings
 import (
 	"github.com/simp7/wordReminder-core/voca"
 	"github.com/simp7/wordReminder-core/voca/meaning"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
@@ -22,11 +23,7 @@ func TestMeanings_IsRight(t *testing.T) {
 	}
 
 	for _, v := range scenario {
-		if v.meanings.IsRight(v.ans) == v.output {
-			t.Logf("test \"%s\" has been passed!\n", v.desc)
-		} else {
-			t.Errorf("error in test \"%s\": wanted %t, but got %t\n", v.desc, v.output, v.meanings.IsRight(v.ans))
-		}
+		assert.Equal(t, v.output, v.meanings.IsRight(v.ans), v.desc)
 	}
 
 }
@@ -44,11 +41,7 @@ func TestMeanings_String(t *testing.T) {
 	}
 
 	for _, v := range scenario {
-		if v.meanings.String() == v.output {
-			t.Logf("test \"%s\" has been passed!\n", v.desc)
-		} else {
-			t.Errorf("error in test \"%s\": wanted %s, but got %s\n", v.desc, v.output, v.meanings)
-		}
+		assert.Equal(t, v.output, v.meanings.String(), v.desc)
 	}
 
 }
