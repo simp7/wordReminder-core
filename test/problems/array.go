@@ -7,7 +7,7 @@ type array struct {
 	idx  int
 }
 
-func Array(pr ...test.Problem) test.Problems {
+func Array(pr ...test.Problem) *array {
 	p := new(array)
 	p.idx = -1
 	p.data = pr

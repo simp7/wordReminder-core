@@ -13,7 +13,7 @@ func TestArray_Iterate(t *testing.T) {
 
 	scenario := []struct {
 		desc     string
-		problems test.Problems
+		problems *array
 		input    []string
 	}{
 		{"single problem", Array(problem.Meaning(word.New("apple", meaning.Noun("사과")))), []string{"사과"}},
@@ -26,23 +26,11 @@ func TestArray_Iterate(t *testing.T) {
 
 	for _, v := range scenario {
 		i := 0
-		ok := true
+		assert.Len(t, v.problems.data, len(v.input), v.desc)
 		v.problems.Iterate(func(problem test.Problem) {
-			if len(v.input) == i {
-				t.Errorf("error in test \"%s\": index out of range ", v.desc)
-				ok = false
-				return
-			}
-			if !problem.IsCorrect(v.input[i]) {
-				t.Errorf("error in test \"%s\": problem.Iscorrect(%s) returns false\n ", v.desc, v.input[i])
-				ok = false
-				return
-			}
+			assert.True(t, problem.IsCorrect(v.input[i]), v.desc)
 			i += 1
 		})
-		if ok {
-			t.Logf("test %d has been passed!", i)
-		}
 	}
 
 }
