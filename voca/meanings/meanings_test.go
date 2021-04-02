@@ -15,11 +15,11 @@ func TestMeanings_IsRight(t *testing.T) {
 		ans      string
 		output   bool
 	}{
-		{"apple", New(meaning.Noun("사과")), "사과", true},
-		{"apple", New(meaning.Noun("사과")), "바나나", false},
-		{"go", New(meaning.Verb("가다"), meaning.Noun("Go 언어")), "가다", true},
-		{"go", New(meaning.Verb("가다"), meaning.Noun("Go 언어")), "Go 언어", true},
-		{"trial and error", meaning.Idiom("시행착오"), "실패", false},
+		{"a meaning right", New(meaning.Noun("사과")), "사과", true},
+		{"a meaning wrong", New(meaning.Noun("사과")), "바나나", false},
+		{"meanings right 1", New(meaning.Verb("가다"), meaning.Noun("Go 언어")), "가다", true},
+		{"meanings right 2", New(meaning.Verb("가다"), meaning.Noun("Go 언어")), "Go 언어", true},
+		{"meanings wrong", New(meaning.Verb("가다"), meaning.Noun("Go 언어")), "하다", false},
 	}
 
 	for _, v := range scenario {
@@ -35,9 +35,8 @@ func TestMeanings_String(t *testing.T) {
 		meanings voca.Meanings
 		output   string
 	}{
-		{"apple", New(meaning.Noun("사과")), "사과"},
-		{"go", New(meaning.Verb("가다"), meaning.Noun("Go 언어")), "가다, Go 언어"},
-		{"beautiful", New(meaning.Adjective("아름다운")), "아름다운"},
+		{"a meaning", New(meaning.Noun("사과")), "사과"},
+		{"meanings", New(meaning.Verb("가다"), meaning.Noun("Go 언어")), "가다, Go 언어"},
 	}
 
 	for _, v := range scenario {

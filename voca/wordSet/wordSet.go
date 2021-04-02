@@ -19,15 +19,24 @@ func (s *set) Len() int {
 }
 
 func (s *set) Get(idx int) voca.Word {
+	if s.Len() <= idx {
+		return nil
+	}
 	return s.Words[idx]
 }
 
 func (s *set) Less(i, j int) bool {
-	w1 := s.Words[i]
-	w2 := s.Words[j]
+	w1 := s.Get(i)
+	w2 := s.Get(j)
+	if w1 == nil || w2 == nil {
+		return false
+	}
 	return w1.Spell().String() < w2.Spell().String()
 }
 
 func (s *set) Swap(i, j int) {
-	s.Words[i], s.Words[j] = s.Words[j], s.Words[i]
+	if s.Get(i) == nil || s.Get(j) == nil {
+		return
+	}
+	s.Words[i], s.Words[j] = s.Get(j), s.Get(i)
 }

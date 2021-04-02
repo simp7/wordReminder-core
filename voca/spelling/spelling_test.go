@@ -14,10 +14,8 @@ func TestSpelling_IsRight(t *testing.T) {
 		ans      string
 		output   bool
 	}{
-		{"apple", New("apple"), "apple", true},
-		{"apple", New("apple"), "banana", false},
-		{"go", New("go"), "go", true},
-		{"trial and error", New("trial and error"), "trials", false},
+		{"right", New("apple"), "apple", true},
+		{"wrong", New("apple"), "banana", false},
 	}
 
 	for _, v := range scenario {
@@ -33,9 +31,9 @@ func TestSpelling_String(t *testing.T) {
 		spelling voca.Spelling
 		output   string
 	}{
-		{"apple", New("apple"), "apple"},
-		{"go", New("go"), "go"},
-		{"beautiful", New("beautiful"), "beautiful"},
+		{"spelling 1", New("apple"), "apple"},
+		{"spelling 2", New("go"), "go"},
+		{"spelling 3", New("beautiful"), "beautiful"},
 	}
 
 	for _, v := range scenario {

@@ -33,9 +33,8 @@ func TestMeaning_String(t *testing.T) {
 		meaning voca.Meaning
 		output  string
 	}{
-		{"apple", Noun("사과"), "사과"},
-		{"go", Verb("가다"), "가다"},
-		{"beautiful", Adjective("아름다운"), "아름다운"},
+		{"meaning 1", Noun("사과"), "사과"},
+		{"meaning 2", Adjective("아름다운"), "아름다운"},
 	}
 
 	for _, v := range scenario {
@@ -51,9 +50,9 @@ func TestMeaning_Type(t *testing.T) {
 		meaning voca.Meaning
 		output  voca.Class
 	}{
-		{"apple", Noun("apple"), class.Noun},
-		{"he", Pronoun("그"), class.Pronoun},
-		{"successfully", Adverb("성공적으로"), class.Adverb},
+		{"noun", Noun("apple"), class.Noun},
+		{"pronoun", Pronoun("그"), class.Pronoun},
+		{"adverb", Adverb("성공적으로"), class.Adverb},
 	}
 
 	for _, v := range scenario {
