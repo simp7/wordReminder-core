@@ -40,3 +40,7 @@ func (s *set) Swap(i, j int) {
 	}
 	s.Words[i], s.Words[j] = s.Get(j), s.Get(i)
 }
+
+func (s *set) Trim(to int) {
+	s.Words = s.Words[:to]
+}
