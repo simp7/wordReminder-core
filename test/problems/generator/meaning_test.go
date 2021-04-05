@@ -41,7 +41,7 @@ func TestMeaning_Do(t *testing.T) {
 	}
 
 	for _, v := range scenario {
-		assert.Equal(t, v.output, Meaning(v.words).Do(), v.desc)
+		assert.Equal(t, v.output, Meaning().Generate(v.words), v.desc)
 	}
 
 }

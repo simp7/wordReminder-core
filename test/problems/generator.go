@@ -1,7 +1,10 @@
 package problems
 
-import "github.com/simp7/wordReminder-core/test"
+import (
+	"github.com/simp7/wordReminder-core/test"
+	"github.com/simp7/wordReminder-core/voca"
+)
 
 type Generator interface {
-	Do() test.Problems
+	Generate(set voca.WordSet) test.Problems
 }
