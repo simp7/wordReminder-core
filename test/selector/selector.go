@@ -1,4 +1,4 @@
-package generator
+package selector
 
 import (
 	"github.com/simp7/wordReminder-core/voca"
