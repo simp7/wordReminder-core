@@ -3,7 +3,6 @@ package streak
 import (
 	"errors"
 	"github.com/simp7/wordReminder-core/user"
-	"strconv"
 )
 
 type streak int
@@ -14,11 +13,6 @@ var (
 
 func (s *streak) Increment() {
 	*s += 1
-}
-
-func (s *streak) String() string {
-	data := int(*s)
-	return strconv.Itoa(data)
 }
 
 func New(preset int) (user.Streak, error) {
