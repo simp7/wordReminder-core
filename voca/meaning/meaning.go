@@ -2,7 +2,6 @@ package meaning
 
 import (
 	"github.com/simp7/wordReminder-core/voca"
-	"github.com/simp7/wordReminder-core/voca/class"
 )
 
 type meaning struct {
@@ -11,39 +10,39 @@ type meaning struct {
 }
 
 func Noun(mean string) voca.Meaning {
-	return meaning{Class: class.Noun, Mean: mean}
+	return meaning{Class: voca.Noun, Mean: mean}
 }
 
 func Verb(mean string) voca.Meaning {
-	return meaning{Class: class.Verb, Mean: mean}
+	return meaning{Class: voca.Verb, Mean: mean}
 }
 
 func Adjective(mean string) voca.Meaning {
-	return meaning{Class: class.Adjective, Mean: mean}
+	return meaning{Class: voca.Adjective, Mean: mean}
 }
 
 func Adverb(mean string) voca.Meaning {
-	return meaning{Class: class.Adverb, Mean: mean}
+	return meaning{Class: voca.Adverb, Mean: mean}
 }
 
 func Conjunction(mean string) voca.Meaning {
-	return meaning{Class: class.Conjunction, Mean: mean}
+	return meaning{Class: voca.Conjunction, Mean: mean}
 }
 
 func Interjection(mean string) voca.Meaning {
-	return meaning{Class: class.Interjection, Mean: mean}
+	return meaning{Class: voca.Interjection, Mean: mean}
 }
 
 func Preposition(mean string) voca.Meaning {
-	return meaning{Class: class.Preposition, Mean: mean}
+	return meaning{Class: voca.Preposition, Mean: mean}
 }
 
 func Pronoun(mean string) voca.Meaning {
-	return meaning{Class: class.Pronoun, Mean: mean}
+	return meaning{Class: voca.Pronoun, Mean: mean}
 }
 
 func Idiom(mean string) voca.Meaning {
-	return meaning{Class: class.Idiom, Mean: mean}
+	return meaning{Class: voca.Idiom, Mean: mean}
 }
 
 func (m meaning) IsRight(input string) bool {

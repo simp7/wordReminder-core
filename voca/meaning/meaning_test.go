@@ -2,7 +2,6 @@ package meaning
 
 import (
 	"github.com/simp7/wordReminder-core/voca"
-	"github.com/simp7/wordReminder-core/voca/class"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -50,9 +49,9 @@ func TestMeaning_Type(t *testing.T) {
 		meaning voca.Meaning
 		output  voca.Class
 	}{
-		{"noun", Noun("apple"), class.Noun},
-		{"pronoun", Pronoun("그"), class.Pronoun},
-		{"adverb", Adverb("성공적으로"), class.Adverb},
+		{"noun", Noun("apple"), voca.Noun},
+		{"pronoun", Pronoun("그"), voca.Pronoun},
+		{"adverb", Adverb("성공적으로"), voca.Adverb},
 	}
 
 	for _, v := range scenario {
