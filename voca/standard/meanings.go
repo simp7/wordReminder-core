@@ -1,4 +1,4 @@
-package meanings
+package standard
 
 import (
 	"github.com/simp7/wordReminder-core/voca"
@@ -8,7 +8,7 @@ type meanings struct {
 	Elements []voca.Meaning
 }
 
-func New(mean ...voca.Meaning) voca.Meanings {
+func Meanings(mean ...voca.Meaning) voca.Meanings {
 	return meanings{Elements: mean}
 }
 

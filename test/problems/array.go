@@ -14,19 +14,13 @@ func Array(pr ...test.Problem) *array {
 	return p
 }
 
-func (a *array) current() test.Problem {
+func (a *array) Next() test.Problem {
+	a.idx++
 	return a.data[a.idx]
 }
 
-func (a *array) next() bool {
-	a.idx++
-	return len(a.data) > a.idx
-}
-
-func (a *array) Iterate(f func(test.Problem)) {
-	for a.next() {
-		f(a.current())
-	}
+func (a *array) HasNext() bool {
+	return len(a.data)-1 != a.idx
 }
 
 func (a *array) Add(problem test.Problem) {

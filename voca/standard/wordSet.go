@@ -1,4 +1,4 @@
-package wordSet
+package standard
 
 import "github.com/simp7/wordReminder-core/voca"
 
@@ -7,7 +7,7 @@ type set struct {
 	Words []voca.Word
 }
 
-func New(id string, words ...voca.Word) voca.WordSet {
+func Words(id string, words ...voca.Word) voca.WordSet {
 	s := new(set)
 	s.ID = id
 	s.Words = words
