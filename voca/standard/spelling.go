@@ -1,4 +1,4 @@
-package spelling
+package standard
 
 import (
 	"github.com/simp7/wordReminder-core/voca"
@@ -8,7 +8,7 @@ type spelling struct {
 	Data string
 }
 
-func New(spell string) voca.Spelling {
+func Spelling(spell string) voca.Spelling {
 	return spelling{Data: spell}
 }
 

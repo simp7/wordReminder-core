@@ -1,4 +1,4 @@
-package meaning
+package standard
 
 import (
 	"github.com/simp7/wordReminder-core/voca"

@@ -1,4 +1,4 @@
-package spelling
+package standard
 
 import (
 	"github.com/simp7/wordReminder-core/voca"
@@ -14,8 +14,8 @@ func TestSpelling_IsRight(t *testing.T) {
 		ans      string
 		output   bool
 	}{
-		{"right", New("apple"), "apple", true},
-		{"wrong", New("apple"), "banana", false},
+		{"right", Spelling("apple"), "apple", true},
+		{"wrong", Spelling("apple"), "banana", false},
 	}
 
 	for _, v := range scenario {
@@ -31,9 +31,9 @@ func TestSpelling_String(t *testing.T) {
 		spelling voca.Spelling
 		output   string
 	}{
-		{"spelling 1", New("apple"), "apple"},
-		{"spelling 2", New("go"), "go"},
-		{"spelling 3", New("beautiful"), "beautiful"},
+		{"spelling 1", Spelling("apple"), "apple"},
+		{"spelling 2", Spelling("go"), "go"},
+		{"spelling 3", Spelling("beautiful"), "beautiful"},
 	}
 
 	for _, v := range scenario {
