@@ -1,4 +1,4 @@
-package problems
+package array
 
 import "github.com/simp7/wordReminder-core/test"
 
@@ -7,7 +7,7 @@ type array struct {
 	idx  int
 }
 
-func Array(pr ...test.Problem) *array {
+func Array(pr ...test.Problem) test.Problems {
 	p := new(array)
 	p.idx = -1
 	p.data = pr
@@ -23,6 +23,6 @@ func (a *array) HasNext() bool {
 	return len(a.data)-1 != a.idx
 }
 
-func (a *array) Add(problem test.Problem) {
-	a.data = append(a.data, problem)
+func (a *array) Size() int {
+	return len(a.data)
 }

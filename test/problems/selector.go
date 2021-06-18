@@ -1,4 +1,4 @@
-package selector
+package problems
 
 import (
 	"github.com/simp7/wordReminder-core/voca"
@@ -11,7 +11,7 @@ type selector struct {
 	words voca.WordSet
 }
 
-func New(words voca.WordSet) *selector {
+func Selector(words voca.WordSet) *selector {
 
 	g := new(selector)
 

@@ -1,7 +1,6 @@
-package selector
+package problems
 
 import (
-	"github.com/simp7/wordReminder-core/test"
 	"github.com/simp7/wordReminder-core/voca"
 	"github.com/simp7/wordReminder-core/voca/standard"
 	"github.com/stretchr/testify/assert"
@@ -11,7 +10,7 @@ import (
 func TestSelector_Select(t *testing.T) {
 	scenario := []struct {
 		desc   string
-		s      test.Selector
+		s      *selector
 		amount int
 		output voca.WordSet
 	}{
