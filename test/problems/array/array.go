@@ -7,10 +7,10 @@ type array struct {
 	idx  int
 }
 
-func Array(pr ...test.Problem) test.Problems {
+func Array(problems ...test.Problem) test.Problems {
 	p := new(array)
 	p.idx = -1
-	p.data = pr
+	p.data = problems
 	return p
 }
 

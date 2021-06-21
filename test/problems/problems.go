@@ -5,17 +5,20 @@ import (
 	"github.com/simp7/wordReminder-core/voca"
 )
 
-func Meaning(words voca.WordSet, amount int, function func(...test.Problem) test.Problems) test.Problems {
+func New(words voca.WordSet, amount int, gen func(voca.WordSet) *generator, function func(...test.Problem) test.Problems) test.Problems {
 
-	pSelector := Selector(words)
-	selected := pSelector.Select(amount)
-
-	problems := make([]test.Problem, selected.Len())
-
-	for i := 0; i < selected.Len(); i++ {
-		problems[i] = test.Meaning(selected.Get(i))
-	}
+	sel := Selector(words)
+	selected := sel.Select(amount)
+	problems := gen(selected).Generate()
 
 	return function(problems...)
 
+}
+
+func Meaning(words voca.WordSet, amount int, structure func(...test.Problem) test.Problems) test.Problems {
+	return New(words, amount, meaning, structure)
+}
+
+func Spelling(words voca.WordSet, amount int, structure func(...test.Problem) test.Problems) test.Problems {
+	return New(words, amount, spelling, structure)
 }
