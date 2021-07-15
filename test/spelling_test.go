@@ -1,34 +1,16 @@
-package problem
+package test
 
 import (
-	"github.com/simp7/wordReminder-core/test"
 	"github.com/simp7/wordReminder-core/voca/standard"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
-func TestSpellingProblem_Question(t *testing.T) {
-
-	scenario := []struct {
-		desc    string
-		problem test.Problem
-		output  string
-	}{
-		{"a meaning", Spelling(standard.Word("apple", standard.Noun("사과"))), "사과"},
-		{"meanings", Spelling(standard.Word("go", standard.Noun("Go 언어"), standard.Verb("가다"))), "Go 언어, 가다"},
-	}
-
-	for _, v := range scenario {
-		assert.Equal(t, v.output, v.problem.Question().String(), v.desc)
-	}
-
-}
-
 func TestSpellingProblem_IsCorrect(t *testing.T) {
 
 	scenario := []struct {
 		desc    string
-		problem test.Problem
+		problem Problem
 		input   string
 		output  bool
 	}{
